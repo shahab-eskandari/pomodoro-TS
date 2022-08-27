@@ -1,23 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import CountdownTimer from './components/countDownTimer';
+import { PomodoroInput } from './global/types';
+import Navbar from './components/Navbar';
 
 function App() {
+
+  const pomodoroInput: PomodoroInput ={
+    pamadoreDuration: 25, 
+    breakDuration: 5,
+    type: 'Focus',
+    status: 'Start'
+  }
+
   return (
     <div className="App">
+      <Navbar/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Pomodoro</h1>
+        <CountdownTimer {...pomodoroInput} />
       </header>
     </div>
   );
