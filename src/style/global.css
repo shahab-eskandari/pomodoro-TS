@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --dark-back-color: #282c34;
+    --dark-back-color-secondry: #5f5f5f; 
+    --dark-font-color: #e0e0e0;
+    --light-back-color:var(--dark-font-color); 
+    --light-font-color:var(--dark-back-color);
+    --primary-color: #2fd3fc;
+}
+
+
+
+body, button {
+    font-family: 'Crimson Text', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--dark-back-color);
+  }
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--dark-back-color-secondry);
+}
+
+.nav-link {
+    list-style: none;
+}
+
+.nav-link li {
+    display: inline-block;
+    padding: 0 20px; 
+}
+
+.nav-link li a{
+    transition: all 0.3s ease 0s;
+    color: var(--dark-font-color);
+}
+
+.nav-link li a:hover{
+    color: var(--primary-color)
+}
+
+.container {
+    padding: 0 15%;
+}
+    
+.App-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .show-counter__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .time-display__number{
+    font-size: 100px;
+  }
+  
+  .buttons-panel__container{
+    display: flex;
+    justify-content:space-around;
+  }
+  
+  .buttons-panel__button{
+    background: none;
+    font-size: inherit;
+    color: aliceblue;
+    background: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid white;
+  }
+  
+  .buttons-panel__button:hover{
+    background-color: aliceblue;
+    color: #282c34;
+    border: 1px solid #282c34 ;
+  }
+  
+  .btn{
+    background: none;
+    font-size: inherit;
+    color: aliceblue;
+    background: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid white;
+  }
+  
+  .btn:hover{
+    background-color: aliceblue;
+    color: #282c34;
+    border: 1px solid #282c34 ;
+  }

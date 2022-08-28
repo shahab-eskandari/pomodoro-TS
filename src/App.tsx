@@ -1,7 +1,8 @@
-import './App.css';
+import '../src/style/global.css';
 import CountdownTimer from './components/countDownTimer';
 import { PomodoroInput } from './global/types';
 import Navbar from './components/Navbar';
+import ThemeContextWrapper from './context/themeContextWrapper';
 
 function App() {
 
@@ -13,13 +14,15 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Navbar/>
-      <header className="App-header">
-        <h1>Pomodoro</h1>
-        <CountdownTimer {...pomodoroInput} />
-      </header>
-    </div>
+    <ThemeContextWrapper>
+      <div className="container">
+        <Navbar/>
+        <header className="App-header">
+          <h1>Pomodoro</h1>
+          <CountdownTimer {...pomodoroInput} />
+        </header>
+      </div>
+    </ThemeContextWrapper>
   );
 }
 

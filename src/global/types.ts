@@ -19,3 +19,8 @@ export interface PomodoroOutput {
     handleStartBreak: ()=>void
     handleSkipBreak: ()=>void
 }
+
+export interface Themes {
+    dark: string
+    light: string
+}
