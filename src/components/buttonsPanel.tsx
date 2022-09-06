@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 import { PomodoroOutput } from "../global/types";
 
 const ButtonsPanel = (data: PomodoroOutput )=>{
+
+    const theme = useContext(ThemeContext); 
 
     let 
     startToFocusBtn, 
@@ -32,32 +36,32 @@ const ButtonsPanel = (data: PomodoroOutput )=>{
         <div className="buttons-panel__container">
             {startToFocusBtn && 
             <button 
-                className="buttons-panel__button" 
+                className={`buttons-panel__button ${theme.theme}-btn`}  
                 onClick={()=>data.handleStartFocus()}>Start to Focus
             </button>}
             {pauseBtn && 
             <button
-                className="buttons-panel__button"
+                className={`buttons-panel__button ${theme.theme}-btn`}
                 onClick={()=>data.handlePause()}>Pause
             </button>}
             {stopBtn && 
             <button
-                className="buttons-panel__button"
+                className={`buttons-panel__button ${theme.theme}-btn`}
                 onClick={()=>data.handleStop()}>Stop
             </button>}
             {continueBtn && 
             <button
-                className="buttons-panel__button"
+                className={`buttons-panel__button ${theme.theme}-btn`}
                 onClick={()=>data.handleContinue()}>Continue
             </button>}
             {startBreakTimeBtn && 
             <button
-                className="buttons-panel__button"
+                className={`buttons-panel__button ${theme.theme}-btn`}
                 onClick={()=>data.handleStartBreak()}>Start Break Time
             </button>}
             {skipBreakTimeBtn && 
             <button 
-            className="buttons-panel__button"
+            className={`buttons-panel__button ${theme.theme}-btn`}
             onClick={()=>{data.handleSkipBreak()}}>Skip Break Time
             </button>}
         </div>

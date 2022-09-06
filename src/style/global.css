@@ -21,15 +21,15 @@ body, button {
     font-family: 'Crimson Text', serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: var(--dark-back-color);
   }
+
+/* Navbar */
 
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: var(--dark-back-color-secondry);
 }
 
 .nav-link {
@@ -43,7 +43,7 @@ nav{
 
 .nav-link li a{
     transition: all 0.3s ease 0s;
-    color: var(--dark-font-color);
+    
 }
 
 .nav-link li a:hover{
@@ -55,13 +55,11 @@ nav{
 }
     
 .App-header {
-    background-color: #282c34;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
   }
   
   .show-counter__container{
@@ -81,14 +79,12 @@ nav{
   .buttons-panel__button{
     background: none;
     font-size: inherit;
-    color: aliceblue;
     background: none;
     outline: none;
     font-weight: bold;
     border-radius: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    border: 1px solid white;
   }
   
   .buttons-panel__button:hover{
@@ -97,20 +93,51 @@ nav{
     border: 1px solid #282c34 ;
   }
   
-  .btn{
+  /* .btn{
     background: none;
     font-size: inherit;
-    color: aliceblue;
     background: none;
     outline: none;
     font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
-    border: 1px solid white;
   }
   
   .btn:hover{
     background-color: aliceblue;
     color: #282c34;
     border: 1px solid #282c34 ;
+  } */
+
+  /* Handling the CSS for toggling theme */
+
+  .white-content{
+    color: var(--light-font-color);
+    background-color: var(--light-back-color);
   }
+
+  .dark-content{
+    color: var(--dark-font-color);
+    background-color: var(--dark-back-color);
+  }
+
+  .white-content-btn{
+    color: var(--light-font-color);
+    background-color: var(--light-back-color);
+    border: 1px solid var(--light-font-color);
+  }
+
+  .dark-content-btn{
+    color: var(--dark-font-color);
+    background-color: var(--dark-back-color);
+    border: 1px solid var(--dark-font-color);
+  }
+
+  .white-content-a{
+    color: var(--light-font-color);
+  }
+
+  .dark-content-a{
+    color: var(--dark-font-color);
+  }
+
