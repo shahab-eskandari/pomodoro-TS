@@ -2,8 +2,12 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/themeContext";
 import ToggleButton from "./toggleButton";
 
-const Navbar = ()=>{
+type NavbarProps = {
+    openDrawer: (state: boolean)=>void
+}
 
+const Navbar = (props: NavbarProps)=>{
+    
     const theme = useContext(ThemeContext); 
 
     return(   
@@ -25,11 +29,11 @@ const Navbar = ()=>{
                         </a>
                     </li>
                     <li>
-                        <a
+                        <button
                             className={`${theme.theme}-a`} 
-                            href="/">
+                            onClick={()=>props.openDrawer(true)}>
                             Setting
-                            </a>
+                        </button>
                     </li>
                 </ul>
             </div>
