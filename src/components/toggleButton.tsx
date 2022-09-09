@@ -14,7 +14,7 @@ const ToggleButton = ()=> {
                 onClick={()=>theme.changeTheme(theme.theme)}
             />
             
-            <label htmlFor="toggle_checkbox">
+            <label htmlFor="toggle_checkbox" className='toggle-label'>
                 <div id="star">
                     <div className="star" id="star-1">★</div>
                     <div className="star" id="star-2">★</div>

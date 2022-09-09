@@ -1,16 +1,29 @@
-import {useState, useEffect, useRef} from 'react'; 
+import {useState, useEffect, useRef, useContext} from 'react'; 
 import { PomodoroInput } from '../global/types';
+import { configContext } from '../context/configContext';
 
+ 
 
-const useCountDown = (pamadore: PomodoroInput)=>{
-    const pomodoroDurationSec = pamadore.pamadoreDuration * 60 ;
-    const breakDurationSec = pamadore.breakDuration * 60;
+const useCountDown = ()=>{
+    
+    const config = useContext(configContext);
+
+    const pomodoroInput: PomodoroInput ={
+        pomodoroDuration: config.config.pomodoroDuration, 
+        breakDuration: config.config.breakDuration,
+        type: 'Focus',
+        status: 'Start'
+    }
+    
+    const pomodoroDurationSec = pomodoroInput.pomodoroDuration * 60 ;
+    const breakDurationSec = pomodoroInput.breakDuration * 60;
+    console.log(pomodoroDurationSec)
 
     const intervalRef = useRef <any|null>(null);
     
     const [countDown, setCountDown]= useState(pomodoroDurationSec);
-    const [type, setType] = useState(pamadore.type);
-    const [status, setStatus] = useState(pamadore.status);
+    const [type, setType] = useState(pomodoroInput.type);
+    const [status, setStatus] = useState(pomodoroInput.status);
 
     useEffect (()=>{
         if (status==='Running'){

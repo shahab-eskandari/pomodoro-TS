@@ -1,12 +1,13 @@
 import ShowCounter from './showCounter';
 import ButtonsPanel from './buttonsPanel';
 import { useCountDown } from '../hooks/useCountDown';
-import { PomodoroInput, PomodoroOutput } from '../global/types';
+import { PomodoroOutput } from '../global/types';
 
 
-const CountdownTimer = (pomodoroInput: PomodoroInput) => {
+const CountdownTimer = () => {
     
-    const pomodoroOutput : PomodoroOutput = useCountDown (pomodoroInput)
+    const pomodoroOutput : PomodoroOutput = useCountDown();
+    console.log(pomodoroOutput.countDown);
 
     return (
         <div>
