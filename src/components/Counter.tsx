@@ -3,9 +3,10 @@ import "./Counter.css";
 type CounterProps = { 
     duration: number 
     setDuration: (count:number)=>void
+    durationError: boolean
 }
 export default function Counter(props:CounterProps) {
-
+console.log(props.durationError)
 
 return (
     <div>
@@ -13,7 +14,15 @@ return (
         <button
             className='counter__button'
             aria-label="Decrement value"
-            onClick={()=>props.setDuration(props.duration - 1)}
+            disabled={props.durationError}
+            onClick={()=>{
+                //if(!props.durationError){
+                    props.setDuration(props.duration - 1)
+                //}else{
+                  //  console.log("Error")
+                }
+               // }
+            }
         >
             -
         </button>

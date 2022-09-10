@@ -30,7 +30,7 @@ const Navbar = (props: NavbarProps)=>{
                     </li>
                     <li>
                         <button
-                            className={`${theme.theme}-a`} 
+                            className={`nav__btn ${theme.theme}-a`} 
                             onClick={()=>props.openDrawer(true)}>
                             Setting
                         </button>

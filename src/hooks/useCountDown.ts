@@ -17,13 +17,16 @@ const useCountDown = ()=>{
     
     const pomodoroDurationSec = pomodoroInput.pomodoroDuration * 60 ;
     const breakDurationSec = pomodoroInput.breakDuration * 60;
-    console.log(pomodoroDurationSec)
 
     const intervalRef = useRef <any|null>(null);
     
     const [countDown, setCountDown]= useState(pomodoroDurationSec);
     const [type, setType] = useState(pomodoroInput.type);
     const [status, setStatus] = useState(pomodoroInput.status);
+
+    useEffect(()=>{
+        setCountDown(pomodoroDurationSec)
+    },[pomodoroDurationSec])
 
     useEffect (()=>{
         if (status==='Running'){

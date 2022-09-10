@@ -13,7 +13,6 @@ export default function ConfigContextWrapper (props:ConfigContextWrapperProps){
         setConfig(config)
     },[config])
 
-    console.log(config)
 
     return (
         <configContext.Provider value={{config: config, setConfig: setConfig}}>

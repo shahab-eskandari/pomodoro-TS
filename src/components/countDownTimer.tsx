@@ -7,8 +7,7 @@ import { PomodoroOutput } from '../global/types';
 const CountdownTimer = () => {
     
     const pomodoroOutput : PomodoroOutput = useCountDown();
-    console.log(pomodoroOutput.countDown);
-
+    
     return (
         <div>
             <div>

@@ -1,8 +1,9 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useContext } from 'react';
 import cn from 'classnames';
 import { createPortal } from 'react-dom';
 import '../style/global.css'
 import useMountTransition from '../hooks/useMountTransition';
+import { ThemeContext } from '../context/themeContext';
 
 type DrawerProps = {
     isOpen: boolean
@@ -24,6 +25,8 @@ const Drawer = ({
     const bodyRef = useRef(document.querySelector("body")!);
     const portalRootRef = useRef(document.getElementById('drawer-root') || createPortalRoot());
     const isTransitioning = useMountTransition(isOpen, 1000);
+
+    const theme = useContext(ThemeContext);
 
     useEffect(()=>{
         const pageScroll = ()=>{ 
@@ -74,7 +77,7 @@ const Drawer = ({
     if (!isTransitioning && removeContentWhileClosed && !isOpen) return null; 
 
     return createPortal(
-        <>{console.log(isTransitioning)}
+        <>
             <div
                 aria-hidden={isOpen ? "false" : "true"}
                 className={
@@ -87,7 +90,7 @@ const Drawer = ({
             >
 
                 <div
-                className={cn("drawer", position)}
+                className={cn("drawer", position, theme.theme)}
                 role="dialog"
                 >
                 {children}
